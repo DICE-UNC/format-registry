@@ -1,0 +1,716 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Pro "http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Pro/" >
+]>
+
+
+<rdf:RDF xmlns="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#"
+     xml:base="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Pro="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Pro/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#sortGroup -->
+
+    <owl:AnnotationProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#sortGroup"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#ContainsCAD -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#ContainsCAD">
+        <rdfs:label>ContainsCAD</rdfs:label>
+        <rdfs:comment>Any file format in this category that is contained by this format. </rdfs:comment>
+        <rdfs:range rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#contains"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#ContainsGIS -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#ContainsGIS">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>ContainsGIS</rdfs:label>
+        <rdfs:comment>Any file format in this category that is contained by this format.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#GISFormat"/>
+        <rdfs:range rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#GISFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#contains"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#contains">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasRelationship"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasContributor -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasContributor">
+        <rdfs:label rdf:datatype="&xsd;string">Contributor(s)</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">3.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">The current maintainers of the format.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Entity"/>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasCreator -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasCreator">
+        <rdfs:label rdf:datatype="&xsd;string">Creator(s)</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">3.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">The creator or original author of the engineering format.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Entity"/>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasInteroperableApplication -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasInteroperableApplication">
+        <rdfs:label rdf:datatype="&xsd;string">Interoperable applications</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">4.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">Applications which can read or write files of this format, but are not native applications for the format.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Application"/>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasNativeApplication -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasNativeApplication">
+        <rdfs:label rdf:datatype="&xsd;string">Native application(s)</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">4.0</sortGroup>
+        <rdfs:range rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Application"/>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasPreviousVersion -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasPreviousVersion">
+        <rdfs:label rdf:datatype="&xsd;string">Previous Version(s)</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">5.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">Any file format that is a previous version format of this one. </rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasRelationship"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasRelationship -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasRelationship">
+        <rdfs:label rdf:datatype="&xsd;string">Relationships</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Relationships that the engineering format has with organizations, other formats, etc.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasSyntaxFormat -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasSyntaxFormat">
+        <rdfs:label rdf:datatype="&xsd;string">Syntax Format(s)</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">5.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">Any syntax formats that the engineering format may use. </rdfs:comment>
+        <rdfs:range rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasRelationship"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#isInFamily -->
+
+    <owl:ObjectProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#isInFamily">
+        <rdfs:label rdf:datatype="&xsd;string">Family Format(s)</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">5.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">Any family formats to which the engineering format may belong. </rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:range rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasRelationship"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#ContainsFormat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#ContainsFormat">
+        <rdfs:label>ContainsFormat</rdfs:label>
+        <rdfs:comment>Any file format/extensions that is contained in this format. </rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#createdOn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#createdOn">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Date</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">2.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">Date the format was created.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#documentation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#documentation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Documentation URL</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">1.0</sortGroup>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification">
+        <rdfs:label rdf:datatype="&xsd;string">File Classification</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasAdoption -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasAdoption">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Adoption</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">6.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">Information about how this format has been adopted by other organizations.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasSustainabilityFactor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Description</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">1.0</sortGroup>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasExternalDependency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasExternalDependency">
+        <rdfs:label rdf:datatype="&xsd;string">External Dependency</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">6.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">Anything that the format depends on outside of its control to function.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasSustainabilityFactor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasFileExtension -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasFileExtension">
+        <rdfs:label rdf:datatype="&xsd;string">File Extension</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">2.0</sortGroup>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasFormat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasFormat">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">MIME Type</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">2.0</sortGroup>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasHistory -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasHistory">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">History</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">6.0</sortGroup>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasMagicNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasMagicNumber">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Magic Number</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">2.0</sortGroup>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasRights -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasRights">
+        <rdfs:label rdf:datatype="&xsd;string">License</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">6.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">The name or type of the license for the engineering format. Examples: BSD-style license, Apache License, Proprietary license</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasSample -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasSample">
+        <rdfs:label rdf:datatype="&xsd;string">Sample File(s)</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">-1.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">Example files in this format</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;base64Binary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasSchema -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasSchema">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Schema</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">-2.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">File containing this format&apos;s schema</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;base64Binary"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasSustainabilityFactor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasSustainabilityFactor"/>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasTypicalUse -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#hasTypicalUse">
+        <rdfs:label rdf:datatype="&xsd;string">Typical Use</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">6.0</sortGroup>
+        <rdfs:comment rdf:datatype="&xsd;string">Keywords that describe the format&apos;s typical use. Examples: CAD and CAM</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#isBinary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#isBinary">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Binary</rdfs:label>
+        <sortGroup rdf:datatype="&xsd;double">2.0</sortGroup>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#isVectorBased -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#isVectorBased">
+        <rdfs:label>isVectorBased</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#GISFormat"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supports2DRasterData -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supports2DRasterData">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports 2D Raster Data</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supports3DRasterData -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supports3DRasterData">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports 3D Raster Data</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsAssembly -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsAssembly">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Assembly</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">Can the format support assembly? Example: Does the format allow the assembly instructions to be explicitly specified with a model?</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsContourSets -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsContourSets">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Contour Sets</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsForces -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsForces">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Forces</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsImplicitCurves -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsImplicitCurves">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Implicit Curves</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsImplicitSurfaces -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsImplicitSurfaces">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Implicit Surfaces</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsKinematics -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsKinematics">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Kinematics</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsManifoldSurfaceBoundaries -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsManifoldSurfaceBoundaries">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Manifold Surface Boundaries</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsManifoldSurfaceMeshes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsManifoldSurfaceMeshes">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Manifold Surface Meshes</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsManifoldVolumeBoundaries -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsManifoldVolumeBoundaries">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Manifold Volume Boundaries</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsManifoldVolumeMeshes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsManifoldVolumeMeshes">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Manifold Volume Meshes</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsMaterialTransparency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsMaterialTransparency">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Material Transparency</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsMultiResolutionModels -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsMultiResolutionModels">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Multi-Resolution Models</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsNURBS -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsNURBS">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports NURBS</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsNonManifoldBoundaries -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsNonManifoldBoundaries">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Non-Manifold Boundaries</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsNonManifoldMeshes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsNonManifoldMeshes">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Non-Manifold Meshes</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsParametricCurves -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsParametricCurves">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Parametric Curves</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsParametricSurfaces -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsParametricSurfaces">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Parametric Surfaces</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsPointSets -->
+
+    <owl:DatatypeProperty rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#supportsPointSets">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">Supports Point Sets</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#fileClassification"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Application -->
+
+    <owl:Class rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Application"/>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Company -->
+
+    <owl:Class rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Company">
+        <rdfs:subClassOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat -->
+
+    <owl:Class rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#EngineeringFileFormat">
+        <rdfs:label rdf:datatype="&xsd;string">Engineering File Format</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Entity -->
+
+    <owl:Class rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Entity"/>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat -->
+
+    <owl:Class rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#GISFormat -->
+
+    <owl:Class rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#GISFormat">
+        <rdfs:label>Geospatial Formats</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#FileFormat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Organization -->
+
+    <owl:Class rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Organization">
+        <rdfs:subClassOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Person -->
+
+    <owl:Class rdf:about="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Person">
+        <rdfs:subClassOf rdf:resource="http://www.nationaldesignrepository.org/ontologies/formatregistry.owl#Entity"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

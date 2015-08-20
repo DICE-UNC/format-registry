@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Items</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css"/>
+		<style>
+			.dummyfile input[type="text"] {
+				width: 120px;
+				display: inline;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="form-container" class="container">
+			<p>Loading...</p>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-1.8.2.js">\x3C/script>')</script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/editform.js"></script>
+	</body>
+</html>

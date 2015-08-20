@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Categories</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css"/>
+	</head>
+	<body>
+		<div class="well">
+		<h1>Format Categories</h1>
+		<ul>
+		#foreach($classDescriptor in $formatClassDescriptors)
+			<li><a href="items?${CLASS_URI_PARAMETER}=$URLEncoder.encode($classDescriptor.getUri().toString(), "UTF-8")">${classDescriptor.getLabel()}</a></li>
+		#end
+		</ul>
+		</div>
+##		<div class="well">
+##		<h1>Other Entities</h1>
+##		<ul>
+##		#foreach($classDescriptor in $otherClassDescriptors)
+##			<li><a href="items?${CLASS_URI_PARAMETER}=$URLEncoder.encode($classDescriptor.getUri().toString(), "UTF-8")">${classDescriptor.getLabel()}</a></li>
+##		#end
+##		</ul>
+##		</div>
+	</body>
+</html>
+

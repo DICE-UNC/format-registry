@@ -1,0 +1,4 @@
+#!/bin/bash
+#I had trouble connecting to the RENCI maven repository. These two files can be installed locally with the following command:
+
+mvn install:install-file -DgroupId=net.sourceforge.owlapi -DartifactId=owlapi -Dversion=3.2.4 -Dpackaging=jar -Dfile=owlapi-bin.jar -Dsources=owlapi-src.jar -DpomFile=owlapi.pom
